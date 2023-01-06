@@ -2,6 +2,7 @@ package starter.wikipedia;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.After;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
@@ -33,6 +34,11 @@ public class ChangeLanguage {
 				() -> assertThat(driver.getCurrentUrl()).isEqualTo("https://es.wikipedia.org/wiki/Wikipedia:Portada"));
 		nav.click_page_information();
 		Serenity.reportThat("Validate Page Content Language is \"es - español\"",
-				() -> assertThat(vac.isLanguageInfoEqualTo("es - español")));	
+				() -> assertThat(vac.isLanguageInfoEqualTo("es - español")));
+	}
+	
+	@Test
+	public void tearDown() {
+		driver.quit();
 	}
 }
