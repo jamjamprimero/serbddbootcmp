@@ -12,7 +12,7 @@ import net.thucydides.core.annotations.Managed;
 import pageobjects.wikipedia.NavigateWiki;
 
 @ExtendWith(SerenityJUnit5Extension.class)
-public class WikiTest {
+public class ChangeLanguage {
 	@Managed(driver = "chrome")
 	WebDriver driver;
 	
@@ -20,7 +20,7 @@ public class WikiTest {
 	ValidationActions vac;
 	
 	@Test
-	public void changeLanguage() {
+	public void change_language_to_spanish() {
 		nav.go_to_wikipedia();
 		nav.click_page_information();	
 		Serenity.reportThat("Validate Page Content Language is \"en - English\"",

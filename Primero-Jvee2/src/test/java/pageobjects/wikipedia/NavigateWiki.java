@@ -15,8 +15,6 @@ public class NavigateWiki extends UIInteractions {
 	@Step("Navigate to Wikipedia website")
 	public void go_to_wikipedia() {
 		openUrl("https://en.wikipedia.org/wiki/Main_Page");
-		
-		
 	}
 	
 	@Step("Click Page Information hyperlink")
