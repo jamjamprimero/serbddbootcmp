@@ -2,15 +2,19 @@ package pageobjects.wikipedia;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
 
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.steps.UIInteractions;
 import net.thucydides.core.annotations.Step;
 
 public class NavigateWiki extends UIInteractions {
 	
-	private static final By bPInfoHLink = By.xpath("//li[@id='t-info']//a");
-	private static final By bSpanishLink = By.xpath("//a[@lang='es']");
-	
+//	private static final By bPInfoHLink = By.xpath("//li[@id='t-info']//a");
+//	private static final By bSpanishLink = By.xpath("//a[@lang='es']");
+
+	@FindBy(xpath="//li[@id='t-info']//a") WebElementFacade bPInfoHLink;
+	@FindBy(css="a[lang=es]") WebElementFacade bSpanishLink;
 	
 	@Step("Navigate to Wikipedia website")
 	public void go_to_wikipedia() {
