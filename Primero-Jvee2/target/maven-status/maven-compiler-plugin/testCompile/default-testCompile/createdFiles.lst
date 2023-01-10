@@ -1,0 +1,3 @@
+pageobjects\wikipedia\ValidationActions.class
+starter\wikipedia\ChangeLanguage.class
+pageobjects\wikipedia\NavigateWiki.class
