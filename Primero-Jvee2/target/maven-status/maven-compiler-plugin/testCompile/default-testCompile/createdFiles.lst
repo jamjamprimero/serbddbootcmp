@@ -1,3 +1,6 @@
-pageobjects\wikipedia\ValidationActions.class
-starter\wikipedia\ChangeLanguage.class
-pageobjects\wikipedia\NavigateWiki.class
+pageobjects\wikipedia\WikiElements.class
+starter\wikipedia\NavigateWiki.class
+starter\wikipedia\ValidationActions.class
+datastream\CucumberRunner.class
+stepdefinitions\wikicucumber.class
+test\wikipedia\ChangeLanguage.class
