@@ -16,7 +16,7 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@testcase
+@testcases
 Feature: Switching languages
 
   @TC001

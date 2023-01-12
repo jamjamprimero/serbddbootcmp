@@ -22,16 +22,16 @@ public class ChangeLanguage {
 	ValidationActions vac;
 	
 	@Test
-	public void change_language_to_es() {
+	public void change_language_to_Deutsch() {
 		nav.go_to_wikipedia();
 		vac.isWikipageLanguageEqualTo("en");
 		nav.click_page_information();
 		vac.isLanguageInfoEqualTo("en - English");
 		nav.navigate_back();
-		nav.select_language("es", "Español");
-		vac.isWikipageLanguageEqualTo("es");
+		nav.select_language("de", "Deutsch");
+		vac.isWikipageLanguageEqualTo("de");
 		nav.click_page_information();
-		vac.isLanguageInfoEqualTo("es - español");
+		vac.isLanguageInfoEqualTo("de - Deutsch");
 	}
 	
 	

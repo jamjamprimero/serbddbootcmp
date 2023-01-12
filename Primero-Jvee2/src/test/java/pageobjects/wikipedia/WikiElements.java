@@ -7,7 +7,7 @@ import net.serenitybdd.core.pages.PageComponent;
 import net.serenitybdd.core.pages.WebElementFacade;
 
 public class WikiElements extends PageComponent {
-	@FindBy(xpath="//li[@id='t-info']//a")
+	@FindBy(xpath="//*[@id='t-info']//a")
 	public WebElementFacade bPInfoHLink;
 	
 	@FindBy(xpath="//tr[@id='mw-pageinfo-article-id']/following-sibling::tr[1]/td[2]")
@@ -21,7 +21,7 @@ public class WikiElements extends PageComponent {
 
 	public WebElementFacade bLangLink;
 	public void setLangLink(String sLCode) {
-		bLangLink = $(By.cssSelector("a[lang="+sLCode+"]"));
+		bLangLink = $(By.xpath("//a[@lang='"+sLCode+"']"));
 	}
 	
 	public String getLangInfo() {
