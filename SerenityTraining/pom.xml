@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.rcg</groupId>
+  <artifactId>SerenityTraining</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>SerenityTraining</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <junit.version>3.8.1</junit.version>
+    <serenity.version>3.4.2</serenity.version>
+	<junit5.version>5.2.0</junit5.version>
+	<cucumber.version>7.10.1</cucumber.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+		<groupId>net.serenity-bdd</groupId>
+		<artifactId>serenity-core</artifactId>
+		<version>${serenity.version}</version>
+		<scope>test</scope>
+	</dependency>
+	
+	<dependency>
+		<groupId>net.serenity-bdd</groupId>
+		<artifactId>serenity-junit5</artifactId>
+		<version>${serenity.version}</version>
+		<scope>test</scope>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.junit.jupiter</groupId>
+		<artifactId>junit-jupiter-api</artifactId>
+		<version>${junit5.version}</version>
+		<scope>test</scope>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.junit.jupiter</groupId>
+		<artifactId>junit-jupiter-engine</artifactId>
+		<version>${junit5.version}</version>
+		<scope>test</scope>
+	</dependency>
+	
+	<dependency>
+		<groupId>io.cucumber</groupId>
+		<artifactId>cucumber-junit</artifactId>
+		<version>${cucumber.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>io.cucumber</groupId>
+		<artifactId>cucumber-gherkin</artifactId>
+		<version>${cucumber.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>io.cucumber</groupId>
+		<artifactId>cucumber-java</artifactId>
+		<version>${cucumber.version}</version>
+	</dependency>
+    
+  </dependencies>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>net.serenity-bdd.maven.plugins</groupId>
+    		<artifactId>serenity-maven-plugin</artifactId>
+    		<version>${serenity.version}</version>
+    			<configuration>
+      				<tags>${tags}</tags>
+    			</configuration>
+  		<executions>
+        	<execution>
+            	<id>serenity-reports</id>
+            	<phase>post-integration-test</phase>
+            	<goals>
+                	<goal>aggregate</goal>
+            	</goals>
+        	</execution>
+    	</executions>
+    	</plugin>
+  	</plugins>
+  </build>
+  
+</project>
